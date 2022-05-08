@@ -1,0 +1,227 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  font-size: 1em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  font-size: 1.2em;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+  margin: 0 0 30px 0;
+  color: #333;
+}
+
+.language {
+  padding: 8px 14px;
+  border: 3px solid #ddd;
+  border-radius: 20px;
+  margin: 4px;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+/* rows */
+.row {
+  text-align: center;
+  display:flex;
+  justify-content: center;
+}
+
+.row > div {
+  display:block;
+  width: 60px;
+  height: 60px;
+  border: 3px solid #ddd;
+  margin: 4px;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+.row > div.green {
+  --background: #5ac85a;
+  --border-color: #5ac85a;
+  animation: flip 0.5s ease forwards;
+}
+
+.row > div.yellow {
+  --background: #e2cc68;
+  --border-color: #e2cc68;
+  animation: flip 0.5s ease forwards;
+}
+
+.row > div.gray {
+  --background: #a1a1a1;
+  --border-color: #a1a1a1;
+  animation: flip 0.5s ease forwards;
+}
+
+.row > div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.row > div:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.row > div:nth-child(4) {
+  animation-delay: 0.6s
+}
+.row > div:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.row.current > div.filled {
+  animation: bounce 0.1s ease-in-out forwards;
+}
+
+.keypad {
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.keypad > div {
+  margin: 5px;
+  width: 40px;
+  height: 50px;
+  background-color: #eee;
+  display: inline-block;
+  border-radius: 6px;
+  line-height: 50px;
+  transition: background-color .5s ease-in-out;
+  cursor: pointer;
+  color: #666;
+}
+
+.keypad > div:active {
+  color: #000;
+}
+
+.keypad > div:nth-child(20){
+  width: 40px;
+}
+.keypad > div:nth-child(28) {
+  width: 100px;
+}
+
+.keypad > .yellow {
+  background-color: #e2cc68;
+}
+.keypad > .gray {
+  background-color: #a1a1a1;
+}
+.keypad > .green {
+  background-color: #5ac85a;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba( 255, 255, 255,.7)
+}
+
+.modal > .content {
+  width: 500px;
+  background: #fff;
+  box-shadow: 0 0 10px 0px rgba( 0, 0, 0, .5);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.modal > .content > .header {
+  padding: 0 30px 30px 30px;
+  margin: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal > .content > p {
+  margin-bottom: 30px;
+}
+
+.modal .solution {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #f333f3;
+}
+
+.solution.green {
+  color: #5ac85a;
+}
+
+.solution.red {
+  color: red;
+}
+
+.play-again-btn {
+  width: 100px;
+  height: 100px;
+  background: transparent;
+  border: 5px solid #5ac85a;
+  border-radius: 50%;
+  box-shadow: none;
+  transition: all .2s ease;
+  margin-bottom: 20px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.play-again-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px 0 rgba( 0, 0, 0, .2);
+}
+
+
+/* animations */
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+    background-color: white;
+    border-color: #ddd;
+  }
+  45% {
+    transform: rotateX(90deg);
+    background-color: white;
+    border-color: #ddd;
+  }
+  55% {
+    transform: rotateX(90deg);
+    background-color: var(--background);
+    border-color: var(--border-color);
+    color: #fff;
+  }
+  100% {
+    transform: rotateX(0deg);
+    background-color: var(--background);
+    border-color: var(--border-color);
+    color: #fff;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+    border-color: #ddd;
+  }
+  50% {
+    transform: scale(1.2);
+    border-color: #000;
+  }
+  100% {
+    transform: scale(1);
+    border-color: #666;
+  }
+}
