@@ -59,7 +59,7 @@ h1 {
   animation: flip 0.5s ease forwards;
 }
 
-.row > div.gray {
+.row > div.grey {
   --background: #a1a1a1;
   --border-color: #a1a1a1;
   animation: flip 0.5s ease forwards;
@@ -114,7 +114,7 @@ h1 {
 .keypad > .yellow {
   background-color: #e2cc68;
 }
-.keypad > .gray {
+.keypad > .grey {
   background-color: #a1a1a1;
 }
 .keypad > .green {

@@ -6,7 +6,7 @@ import Modal from './Modal'
 
 export default function Wordle({ solution, language, setLanguage, setReset, reset }) {
   const [modalVisible, setModalVisible] = useState(false)
-  const { currentGuess, guesses, isCorrect, turn, history, handleKeyup, handleReset: resetGameData } = useWordle(solution)
+  const { currentGuess, guesses, isCorrect, turn, history, usedKeys, handleKeyup, handleReset: resetGameData } = useWordle(solution)
 
   useEffect(() => {
     window.addEventListener('keyup', handleKeyup)
@@ -49,6 +49,7 @@ export default function Wordle({ solution, language, setLanguage, setReset, rese
         handleKeyup={handleKeyup}
         language={language}
         reset={reset}
+        usedKeys={usedKeys}
       />
 
       {modalVisible &&
