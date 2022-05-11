@@ -2,4 +2,4 @@
 
 Game partially made with tutorial
 
-Live demo here:
+Errors and different solutions left in files as commented for study purposes
